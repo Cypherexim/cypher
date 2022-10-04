@@ -1,0 +1,48 @@
+.profile-drop-cont{
+    width: 29%;
+    height:450px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 4%;
+    background-color: white;
+}
+
+.profile-drop-cont1{
+width: 50%;
+height: 20%;
+/* border: 1px solid black; */
+margin-top: 10%;
+margin: auto;
+display: flex;
+}
+.profile-drop-text{
+    margin-top: 8%;
+    font-weight: bold;
+}
+.profile-drop-text1{
+    font-size: 12px;
+}
+.profile-drop-opt{
+    display: flex;
+    width: 70%;
+    height: 30px;
+    /* border: 1px solid red; */
+    margin-top: 2%;
+ margin-left: 15%;
+column-gap:10%;
+}
+.profile-drop-img{
+    margin-top: 95%;
+    height: 20%;
+}
+
+.profile-drop-plan{
+    width: 90%;
+    height: 12%;
+    /* border: 2px solid blue; */
+    margin-top: 15%;
+    margin-left: 5%;
+    background-color: rgb(215,218,227);
+    display: flex;
+}

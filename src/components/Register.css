@@ -1,0 +1,64 @@
+.signcont {
+     width: 65%;
+    height: 450px;
+    border: 3px solid #4cbfa6;
+        position: relative;
+        right: 100px;
+    margin-top: 20%;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: white;
+}
+.email{
+    border-radius: 0;
+    box-shadow: none;
+    /* border: 1px solid #ccc; */
+    color: #555;
+    padding: 6px 12px;
+    font-size: 14px;
+    display: block;
+    width: 85%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+.emailimg{
+    width: 5%;
+    height: 15px;
+    margin-left: 22px;
+    margin-top: 9px;
+}
+.buttonmain{
+    width: 30%;
+   
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 12%;
+    font-size: 15px;
+    background-color: #007aff;
+    color: white;
+    height: 38px;
+    font-size: 400;
+    display: flex;
+    
+}
+.signimg{
+    width: 10px;
+    height: 10px;
+    margin-top: 6px;
+   
+}
+.emailimg1{
+    width: 5%;
+    
+    height: 15px;
+    margin-left: 73px;
+    margin-top: 2px;
+}
