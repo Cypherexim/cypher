@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
-
+import { Navigate,useNavigate } from 'react-router-dom'
 import './Register.css'
 import CountryCode from './CountryCode'
 
 const Register = () => {
     const [value, setValue] = useState()
     const [formData,setformData]=useState([])
+    const navigate=useNavigate()
     const country=(e)=>{
       
       setformData({
@@ -41,7 +42,7 @@ const Register = () => {
             console.log(data);
             if(data.message){
                 alert(data.message); 
-                // navigate("/")
+                window.location.reload();
             } else{
                 alert(data.message); 
             }
@@ -50,7 +51,7 @@ const Register = () => {
              alert ("This is a warning message!");
             console.error(err);
         })
-        //  location.reload()
+        
         }
   return (
     <div className='signcont'>

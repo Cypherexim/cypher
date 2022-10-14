@@ -21,15 +21,15 @@ justify-content: space-around;
 }
 td{
     text-align: center;
-} */
-
+} 
+/* 
     table {
     border: 2px solid forestgreen;
     width: 1200px;
     height: 200px;
-   /* margin-top: 3900px; */
+    margin-top: 3900px; 
    
-    }
+    } */
     
     th {
     border-bottom: 1px solid black;

@@ -9,6 +9,15 @@ import { Button } from '@chakra-ui/react'
 import {RiBookmarkFill} from 'react-icons/ri'
 import{MdDownloadForOffline} from 'react-icons/md'
 import Table from './Table'
+import { useSelector,useDispatch } from 'react-redux'
+import ExportTable from './ExportTable'
+import { Getexdata } from '../redux/action'
+import { useDisclosure,Modal,ModalBody,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,Input,ModalFooter} from '@chakra-ui/react'
+
+
+import { Getdata } from '../redux/action'
+import HsCode from './HsCode'
+
 
 const Sidebar = () => {
   const [openSide,  setOpenSide] = useState(false);
@@ -24,7 +33,12 @@ const country = ['Afghanistan','Albania', 'Algeria','Andorra', 'Angola', 'Antigu
 const [value, setValue] = useState('Choose');
 const[period , setPeriod] = useState("");
 const [hide ,setHide] = useState(false);
-
+const[fromData,setFromData] = useState();
+const dispatch = useDispatch();
+const[change ,setChange] = useState(false);
+ 
+const records = useSelector(store=>store.Alldata)
+console.log(records)
 
 
 const handleShow =(event)=>{
@@ -45,6 +59,32 @@ const handleSearch = (e) => {
 }
 console.log(search);
 
+
+const formData =(e)=>{
+const {name,value} = e.target
+setFromData({
+  ...fromData,[name]:value
+})
+}
+
+console.log(fromData);
+
+const handleSubmit =() =>{
+{change ? dispatch(Getdata(fromData)) : dispatch(Getexdata(fromData))}
+}
+
+const handleSee =(e) =>{
+ setChange(e.target.value) 
+}
+
+const handleType=(e)=>{
+if(e.target.value =="import"){
+  setChange(true);
+} else if(e.target.value =="export"){
+  setChange(false);
+} 
+}
+const{isOpen,onOpen,onClose} = useDisclosure()
 
 return (
   
@@ -201,7 +241,7 @@ return (
        { count ? 
         <div className='country'> 
         <input  placeholder='search' onChange={handleSearch}/>
-          {country.filter(e=>e.toLowerCase().includes(`${search}`)).map(e=><div><Checkbox>{e}</Checkbox> </div>)}
+            {country.filter(e=>e.toLowerCase().includes(`${search}`)).map(e=><div><Checkbox>{e}</Checkbox> </div>)}
         </div> :null}
         <div className='test'>
        <div className='test1' >
@@ -325,7 +365,7 @@ return (
         
       
        </div>
-      </div> 
+      </div>  
     </div> 
        :null}
       </div>
@@ -355,11 +395,12 @@ return (
        <div  className='feat' >
        
       <div className='direct'>
-       Direction
-       <select className='opt1' value={value} onChange={handleChange}>
-         
-          <option>Import </option>
-          <option >Export</option>
+       
+       <select className='opt1' onChange={handleType}>
+        
+         <option value={"direction"}>Direction</option>
+          <option  value={"import"}>Import </option>
+          <option value={"export"}>Export</option>
         </select>
       
       </div>
@@ -379,13 +420,13 @@ return (
        <div className='start'>
        <p>From</p>
         <div className='start1'>
-        < DatePicker  />
-       </div>
+        <input  style ={{fontSize:"15px", height:"30px",width:"160px",borderRadius:"10px"}} type="date" name='fromDate'  onChange={formData} />       
+        </div>
        </div>
        <div className='start'>
        <p>To</p>
         <div className='start1' onChange={(e) =>{handleShow(e)}} >
-        < DatePicker   />
+        <input  style ={{fontSize:"15px", height:"30px",width:"160px",borderRadius:"10px"}} type="date" name='toDate'  onChange={formData} />       
        </div>
        </div>
    
@@ -395,23 +436,39 @@ return (
       <div className='feat'>
       <div className='direct'>
        HS Code
-       <input className='opt1' />
-       <AiOutlinePlusCircle  className='hsdesc'/>
+       <input className='opt1' name ="HSCODE" onChange={formData} />
+       <AiOutlinePlusCircle  className='hsdesc' onClick={onOpen}/>
+           
+
+       <Modal isOpen={isOpen} onClose={onClose} size={400}   >
+             <ModalOverlay />
+             <ModalContent p={6} w={'40%'} >
+               
+               <ModalCloseButton  marginRight={"3%"}/>
+             <ModalBody >
+              <HsCode/>
+             </ModalBody>
+     
+              
+             </ModalContent>
+           </Modal>
+
+
           </div>
           <div className='direct'>
              Product      
-         <input className='opt1' />
+         <input className='opt1'   name ="HSCodeDesc" onChange={formData}/>
        </div>
-      <Button  className='mainsearch'  style={{backgroundColor:"rgb(52,158,210)",height:"30px"}}>Search</Button>
+      <Button  className='mainsearch'  style={{backgroundColor:"rgb(52,158,210)",height:"30px"}} onClick={handleSubmit}>Search</Button>
        </div>
        <div className='feat'>
       <div clas sName='direct'>
       Exporter
-       <input className='opt1' />
+       <input className='opt1' name ="EXPORTER_NAME" onChange={formData}  />
        </div>
           <div className='direct' style={{marginLeft:"20px"}}>
              Importer      
-         <input className='opt1' />
+         <input className='opt1' name ="Importer_Name" onChange={formData} />
        </div>
       <Button className='mainsearch' style={{backgroundColor:"rgb(52,158,210",height:"30px"}}>Reset</Button>
        </div>  
@@ -421,7 +478,7 @@ return (
       <div className='datavaluesmain'>
         <div  className='records' >  
         <p>Records</p>
-        <p>1284</p>
+        <p>{records?records.length:null}</p>
         </div>
         <div  className='records' >  
         <p>Code</p>
@@ -457,7 +514,8 @@ return (
       </div>
 </div>
 <div className='databox'>
-<Table />
+    
+{ change ? <Table/> : <ExportTable/>}
      </div>
       </div>
      

@@ -36,7 +36,7 @@ const Countries = () => {
        </div>
        </div>
        </div>
-       <p  style={{}}>Advance Search</p>
+       <p >Advance Search</p>
       </div>
        <div style={{height:"400px",overflowY:"scroll"}}>
        <table className='name' >
@@ -46,10 +46,10 @@ const Countries = () => {
             <tr style={{width:"100%",fontSize:"14px"}} >
               <td style={{width:"18%",marginRight:"100px",textAlign:"left"}} >{e.name}</td>
               <td style={{width:"8%"}}>{e.direction}</td>
-              <td style={{width:"7%"}}>{e.avail}</td>
+              <td style={{width:"8%",textAlign:"center"  }}>{e.avail}</td>
               <td style={{width:"21%"}}>{e.date}</td>
               <td style={{width:"40%",textAlign:"left"}}>{e.fields}</td>
-              <td><img style={{width:"70%",height:"20%",}} src={e.tabimg} /></td>
+              <td><img style={{width:"55%",height:"20%",}} src={e.tabimg} /></td>
               
             </tr>
           )

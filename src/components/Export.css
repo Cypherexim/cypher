@@ -1,0 +1,21 @@
+
+
+.tablemain {
+    width: auto;
+    height: 200px;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+   
+ th {
+    border-bottom: 0.5px solid black;
+    border: 0.45px solid black;
+    background-color:#4cbfa6 ;
+    color: white;
+    }
+  
+  .tabletd {
+   text-align: left;
+    border: 0.5px solid black;
+    padding: 10px;
+  } 

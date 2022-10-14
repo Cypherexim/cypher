@@ -3,8 +3,12 @@ import React,{useState} from 'react'
 import './Login.css'
 import Navbar from './Navbar'
 import Register from './Register'
+import { Link, Navigate,useNavigate } from 'react-router-dom'
+
 const Login = () => {
   const [formData,setformData]=useState()
+  const navigate=useNavigate()
+
 
   const Handle=(e)=>{
      
@@ -34,7 +38,8 @@ const handleSubmit=(e)=>{
   .then(data =>  { 
       console.log(data);
       if(data){
-          alert(data.message ); 
+          alert(data.message);
+          navigate("/"); 
      
       } else{
           alert(data.message); 
@@ -74,7 +79,8 @@ const handleSubmit=(e)=>{
           </div>
         </form>
         <div className='buttonmain'>
-          <button style={{display:"flex",gap:"5px",marginTop:"4px"}} onClick={handleSubmit} >
+        
+         <button style={{display:"flex",gap:"5px",marginTop:"4px"}} onClick={handleSubmit} >
           <img className='signimg' src='images/login.png' />
           
             Sign In
@@ -83,7 +89,7 @@ const handleSubmit=(e)=>{
         <div className='list'>
         
           <li> Forget Password?</li>
-          <li> Sign up</li>
+          <li > Sign up</li>
           <li>Home</li>
       
         </div>

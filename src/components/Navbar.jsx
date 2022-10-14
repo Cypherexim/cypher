@@ -16,13 +16,13 @@ const Navbar = () => {
   </div>
 
       <div className='setting'>
-         <img className='team1' src="images/profile.png"  />
+         <img  src="images/profile.png"  />
       
        
         <img className='team1' src="images/Not.png"/>
-        
-
-        <img className='team' src="images/Setting.png"/>
+        <img className='team1' src="images/search1.png"/>
+        <img className='team1' src="images/chat.png"/>
+        <img className='team1' src="images/Setting.png"/>
        
       </div>
       <div>

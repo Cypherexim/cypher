@@ -1,0 +1,71 @@
+.usertext{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.addbox{
+    width: 40%;
+    height: 30px;
+    /* border: 1px solid blue; */
+    margin-left: 30%;
+    margin-top: 5%;
+    display: flex;
+}
+.addbox1{
+    width: 40%;
+    /* border: 1px solid red; */
+    text-align: center;
+    background-color: rgb(191,233,254);
+}
+.textlabel{
+    display:flex;
+}
+.labeltext{
+    margin-left: 11%;
+    margin-top: 2%;
+}
+.namein{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 28%;
+    width: 47%;
+}
+
+.namein1{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 19.6%;
+    width: 47%;
+}
+
+.namein2{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 34.5%;
+    width: 47%;
+}
+.namein3{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 31.2%;
+    width: 47%;
+}
+.namein4{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 25.3%;
+    width: 47%;
+}
+.namein5{
+    margin-top: 2%;
+    border:1px solid grey;
+    margin-left: 11.4%;
+    width: 20%;
+}
+.mainform{
+    border: 1px solid red;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 2%;
+    height: 400px;
+}

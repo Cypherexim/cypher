@@ -1,0 +1,35 @@
+.hsmainbox{
+    width: 90%;
+    height: 450px;
+    /* border: 2px solid yellow; */
+    margin-left:    0%;
+    margin-top: 0%;
+   
+}
+.hssearch{
+    width: 60%;
+    height: 30px;
+    border: 1px solid grey;
+    margin-top: 2%;
+    margin-left: 20%;
+    border-radius: 3%;
+}
+.datacont{
+    width: 50%;
+    height: 20px;
+    /* border: 1px solid grey; */
+    margin-top: 3%;
+    margin-left: 20%;
+    text-align: center;
+  
+}
+.datacont:nth-child(odd) {
+    background-color: rgb(249,249,249);
+}
+.hsmidbox{
+    overflow-y: scroll;
+    height: 400px;
+    margin-top: 4%;
+    /* border: 1px solid grey; */
+    cursor: pointer;
+}
